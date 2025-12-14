@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanieh Khaled | Junior Software Developer & Frontend Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #0a0a0a !important;
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Elements -->
+    <div class="floating-element float-1"></div>
+    <div class="floating-element float-2"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">Hanieh Khaled</div>
+                <div class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <a href="Hanieh Khalid - Resume(fixed).pdf" target="_blank" rel="noopener noreferrer" class="btn-cv">View CV</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">Junior Software Developer & Frontend Engineer</h1>
+                    <p class="hero-subtitle">Building clean, reliable web applications with JavaScript, TypeScript, and modern frameworks.</p>
+                    <p class="hero-location">Based in Abu Dhabi, UAE. Interested in AI, sports tech, and real-world products.</p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="Hanieh Khalid - Resume(fixed).pdf" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View CV</a>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">2+</div>
+                        <div class="stat-label">Years</div>
+                        <div class="stat-description">Coding Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">JS/TS</div>
+                        <div class="stat-label">Tech Focus</div>
+                        <div class="stat-description">JavaScript & TypeScript</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">Open</div>
+                        <div class="stat-label">Available For</div>
+                        <div class="stat-description">Internships, Junior Roles, Freelance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Projects</h2>
+                <p class="section-subtitle">Selected work that shows how I build and think.</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1: Transcendence -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Transcendence – Real-Time Multiplayer Web App</h3>
+                        <span class="badge badge-success">Capstone</span>
+                    </div>
+                    <p class="project-tagline">Production-style real-time Pong web application with custom frontend architecture.</p>
+                    <p class="project-description">Built a full-stack multiplayer game featuring user authentication, live gameplay, and matchmaking. Implemented backend services with Fastify, WebSocket communication, and containerized deployment with Docker & NGINX as reverse proxy.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">TypeScript</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">Fastify</span>
+                        <span class="tech-badge">WebSocket</span>
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">NGINX</span>
+                    </div>
+                </div>
+
+                <!-- Project 2: Poll Voting System -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Poll Voting System</h3>
+                    </div>
+                    <p class="project-tagline">Full-stack poll platform with user authentication and real-time vote updates.</p>
+                    <p class="project-description">Developed a complete polling application with user authentication, poll creation, and real-time vote tracking. Designed backend REST APIs for poll management and data storage, deployed to handle concurrent users efficiently.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">TypeScript</span>
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">REST APIs</span>
+                        <span class="tech-badge">Docker</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: Inception -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Inception – Container Infrastructure</h3>
+                    </div>
+                    <p class="project-tagline">Multi-service container architecture with Docker, NGINX, WordPress, and MariaDB.</p>
+                    <p class="project-description">Designed a production-like deployment with separate containers for each service. Configured custom networks, persistent volumes, and SSL/TLS certificates for secure, scalable infrastructure.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">Docker Compose</span>
+                        <span class="tech-badge">NGINX</span>
+                        <span class="tech-badge">WordPress</span>
+                        <span class="tech-badge">MariaDB</span>
+                        <span class="tech-badge">Linux</span>
+                    </div>
+                </div>
+
+                <!-- Project 4: IRC Server -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">IRC – Internet Relay Chat Server</h3>
+                    </div>
+                    <p class="project-tagline">Real-time IRC server in C++ using TCP/IP socket programming.</p>
+                    <p class="project-description">Implemented a fully functional IRC server supporting channels, private messaging, authentication, and multiple concurrent clients. Built with robust command parsing and multiplexing for handling simultaneous connections.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">C++</span>
+                        <span class="tech-badge">TCP/IP</span>
+                        <span class="tech-badge">Sockets</span>
+                        <span class="tech-badge">Linux</span>
+                    </div>
+                </div>
+
+                <!-- Project 5: Cub3D -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Cub3D – 3D Game Engine</h3>
+                    </div>
+                    <p class="project-tagline">Mini 3D engine inspired by Wolfenstein 3D using raycasting techniques.</p>
+                    <p class="project-description">Built a 3D rendering engine in C featuring texture mapping, collision detection, and smooth player movement with real-time input handling. Implemented raycasting algorithms for realistic 3D perspective.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">C</span>
+                        <span class="tech-badge">Raycasting</span>
+                        <span class="tech-badge">Graphics</span>
+                        <span class="tech-badge">Math</span>
+                    </div>
+                </div>
+
+                <!-- Project 6: AI Desktop Assistant -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">AI Desktop Assistant</h3>
+                    </div>
+                    <p class="project-tagline">LLM-powered desktop assistant with GUI and system automation.</p>
+                    <p class="project-description">A Python desktop assistant with GUI that understands natural language commands, calls an LLM for Q&A, and automates tasks like web search, screenshots, volume, and brightness control on local PC.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">AI/ML</span>
+                        <span class="tech-badge">LLM</span>
+                        <span class="tech-badge">GUI</span>
+                    </div>
+                </div>
+
+                <!-- Project 7: Student Budget Assistant -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Student Budget Assistant</h3>
+                    </div>
+                    <p class="project-tagline">Console-based budget assistant for tracking monthly student spending.</p>
+                    <p class="project-description">A Python console app for student dorms that collects monthly budgets, tracks expenses across categories like food, transport, rent, utilities, and entertainment. Calculates totals, remaining balance, and provides real-time feedback on budget status.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">CLI</span>
+                        <span class="tech-badge">Data Management</span>
+                    </div>
+                </div>
+
+                <!-- Project 8: AI ERP Assistant -->
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">AI-Powered ERP Assistant</h3>
+                        <span class="badge badge-info">Prototype</span>
+                    </div>
+                    <p class="project-tagline">AI-powered assistant using natural language and autonomous agents.</p>
+                    <p class="project-description">Prototyped an intelligent ERP assistant that uses natural language processing and autonomous agents to handle routine business tasks, streamline workflows, and improve operational efficiency.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">AI/ML</span>
+                        <span class="tech-badge">NLP</span>
+                        <span class="tech-badge">Agent Frameworks</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills & Technologies</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        Programming Languages
+                    </h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">JavaScript (ES6+)</span>
+                        <span class="skill-pill">TypeScript</span>
+                        <span class="skill-pill">C</span>
+                        <span class="skill-pill">C++</span>
+                        <span class="skill-pill">Python</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        Frontend & UI
+                    </h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">HTML5</span>
+                        <span class="skill-pill">CSS3</span>
+                        <span class="skill-pill">Responsive Design</span>
+                        <span class="skill-pill">React</span>
+                        <span class="skill-pill">Vanilla JS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        Backend & Infrastructure
+                    </h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Node.js</span>
+                        <span class="skill-pill">Fastify</span>
+                        <span class="skill-pill">REST APIs</span>
+                        <span class="skill-pill">WebSocket</span>
+                        <span class="skill-pill">TCP/IP</span>
+                        <span class="skill-pill">Socket Programming</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        DevOps & Tools
+                    </h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Docker</span>
+                        <span class="skill-pill">Docker Compose</span>
+                        <span class="skill-pill">NGINX</span>
+                        <span class="skill-pill">Git & GitHub</span>
+                        <span class="skill-pill">Linux</span>
+                        <span class="skill-pill">SSL/TLS</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        AI & Specialized
+                    </h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">AI/ML Tools</span>
+                        <span class="skill-pill">LLM Integration</span>
+                        <span class="skill-pill">NLP</span>
+                        <span class="skill-pill">Agent Frameworks</span>
+                        <span class="skill-pill">Graphics/Raycasting</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">
+                        Core Competencies
+                    </h3>
+                    <div class="skill-pills">
+                        <span class="skill-pill">Algorithms</span>
+                        <span class="skill-pill">Data Structures</span>
+                        <span class="skill-pill">System Design</span>
+                        <span class="skill-pill">Problem Solving</span>
+                        <span class="skill-pill">Debugging</span>
+                        <span class="skill-pill">Teamwork</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Experience & Activities</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">42 Abu Dhabi – Software Development Student</h3>
+                        <p class="timeline-location">Abu Dhabi, UAE</p>
+                        <ul class="timeline-list">
+                            <li>Developed multiple C projects focusing on algorithms, data structures, and memory management</li>
+                            <li>Built full-stack web applications using modern JavaScript frameworks and REST APIs</li>
+                            <li>Collaborated in peer-to-peer learning environment, conducting code reviews and pair programming</li>
+                            <li>Participated in team projects requiring coordination, planning, and agile methodologies</li>
+                            <li>Worked on ft_transcendence, a complex web project integrating real-time features and authentication</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Events & Hackathons</h3>
+                        <p class="timeline-location">Various Locations</p>
+                        <ul class="timeline-list">
+                            <li>Actively participated in coding events and technical workshops to expand skills</li>
+                            <li>Engaged in AI hackathons exploring machine learning applications and innovative solutions</li>
+                            <li>Contributed to collaborative coding projects with diverse teams under time constraints</li>
+                            <li>Presented project demos and technical solutions to judges and peers</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Education</h2>
+            </div>
+            <div class="education-grid">
+                <div class="education-card">
+                    <div class="education-icon">🎓</div>
+                    <h3 class="education-title">42 Abu Dhabi – Software Development Program</h3>
+                    <p class="education-location">📍 Abu Dhabi, UAE</p>
+                    <p class="education-description">
+                        Intensive, project-based software development program focusing on C programming, 
+                        algorithms, Unix systems, Git version control, and full-stack web development. 
+                        Emphasis on peer learning, problem-solving, and autonomous learning.
+                    </p>
+                    <div class="education-highlights">
+                        <span class="highlight-pill">C Programming</span>
+                        <span class="highlight-pill">Algorithms</span>
+                        <span class="highlight-pill">Unix/Linux</span>
+                        <span class="highlight-pill">Git</span>
+                        <span class="highlight-pill">Web Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get in Touch</h2>
+                <p class="section-subtitle">Open to junior developer roles, internships, and interesting projects.</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div>
+                            <h4>Email</h4>
+                            <a href="mailto:haniehk43@gmail.com">haniehk43@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div>
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/hanieh-khaled-661293296/" target="_blank">linkedin.com/in/hanieh-khaled-661293296</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div>
+                            <h4>GitHub</h4>
+                            <a href="https://github.com/hankhali" target="_blank">github.com/hankhali</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">© 2025 Hanieh Khaled</p>
+                <div class="footer-links">
+                    <a href="https://github.com/hankhali" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/hanieh-khaled-661293296/" target="_blank" class="footer-link">LinkedIn</a>
+                    <a href="mailto:haniehk43@gmail.com" class="footer-link">Email</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
