@@ -1,0 +1,475 @@
+/* ==================== ENHANCED SPECTACULAR EFFECTS ==================== */
+
+/* Enhanced Color Variables */
+:root {
+    --neon-glow: 0 0 10px var(--primary-color), 0 0 20px var(--primary-color), 0 0 30px var(--primary-color);
+    --gradient-primary: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+    --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+    --gradient-holographic: linear-gradient(45deg, #8b5cf6, #ec4899, #06b6d4, #10b981, #f59e0b);
+}
+
+/* ==================== PARTICLE CANVAS BACKGROUND ==================== */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    opacity: 0.3;
+}
+
+/* ==================== ANIMATED BACKGROUND GRADIENTS ==================== */
+.bg-gradient-1,
+.bg-gradient-2,
+.bg-gradient-3 {
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    z-index: -5;
+    animation: gradientFloat 20s ease-in-out infinite;
+    border-radius: 50%;
+    filter: blur(60px);
+}
+
+.bg-gradient-1 {
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+    top: -50%;
+    left: -50%;
+    animation-delay: 0s;
+}
+
+.bg-gradient-2 {
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.08) 0%, transparent 70%);
+    top: -30%;
+    right: -50%;
+    animation-delay: -7s;
+}
+
+.bg-gradient-3 {
+    background: radial-gradient(circle, rgba(6, 182, 212, 0.06) 0%, transparent 70%);
+    bottom: -50%;
+    left: -30%;
+    animation-delay: -14s;
+}
+
+@keyframes gradientFloat {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(50px, -100px) rotate(120deg); }
+    66% { transform: translate(-50px, 50px) rotate(240deg); }
+}
+
+/* ==================== ENHANCED FLOATING ELEMENTS ==================== */
+.float-3 {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-tertiary);
+    top: 60%;
+    right: 20%;
+    animation: float 15s ease-in-out infinite;
+    animation-delay: -10s;
+    box-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+    border-radius: 50%;
+    z-index: -3;
+}
+
+.float-4 {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background: var(--gradient-holographic);
+    top: 10%;
+    left: 15%;
+    animation: float 15s ease-in-out infinite;
+    animation-delay: -7s;
+    box-shadow: 0 0 35px rgba(139, 92, 246, 0.8);
+    border-radius: 50%;
+    z-index: -3;
+}
+
+/* ==================== GLASSMORPHISM NAVIGATION ==================== */
+.glass-nav {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== GLOW TEXT EFFECTS ==================== */
+.glow-text {
+    text-shadow: var(--neon-glow);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.glow-text-subtle {
+    text-shadow: 0 0 5px var(--primary-light);
+}
+
+.pulse-text {
+    animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.9; transform: scale(1.02); }
+}
+
+/* ==================== LOGO WITH GRADIENT ==================== */
+.logo-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.logo-accent {
+    background: var(--gradient-secondary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ==================== GRADIENT TEXT EFFECTS ==================== */
+.gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.holographic-text {
+    background: var(--gradient-holographic);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: holographicShift 3s ease-in-out infinite;
+}
+
+.neon-text {
+    color: var(--accent-cyan);
+    text-shadow: 0 0 5px var(--accent-cyan), 0 0 10px var(--accent-cyan), 0 0 15px var(--accent-cyan);
+}
+
+@keyframes holographicShift {
+    0%, 100% { background-position: 0% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 100% 100%; }
+    75% { background-position: 0% 100%; }
+}
+
+/* ==================== ENHANCED BUTTONS ==================== */
+.holographic-btn {
+    position: relative;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-cyan));
+    background-size: 400% 400%;
+    animation: holographicShift 4s ease-in-out infinite;
+    border: none;
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
+    transform-style: preserve-3d;
+}
+
+.holographic-btn:hover {
+    animation-duration: 1s;
+    transform: translateY(-3px) rotateX(5deg);
+    box-shadow: 0 15px 35px rgba(139, 92, 246, 0.5);
+}
+
+.glass-btn {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: all 0.6s ease;
+}
+
+.glass-btn:hover .btn-shine {
+    left: 100%;
+}
+
+.magnetic-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.magnetic-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.3s ease;
+}
+
+.magnetic-btn:hover:before {
+    left: 100%;
+}
+
+.btn-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-primary);
+    filter: blur(15px);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.magnetic-btn:hover .btn-glow {
+    opacity: 0.7;
+}
+
+/* ==================== 3D TILT CARD EFFECTS ==================== */
+.tilt-card {
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+}
+
+.tilt-card:hover {
+    transform: rotateX(5deg) rotateY(5deg) translateZ(10px);
+}
+
+.tilt-card-3d {
+    transform-style: preserve-3d;
+    transition: all 0.6s ease;
+    position: relative;
+}
+
+.tilt-card-3d:hover {
+    transform: rotateX(10deg) rotateY(10deg) translateZ(20px);
+}
+
+/* ==================== FLOATING CARDS ==================== */
+.floating-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.floating-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(139, 92, 246, 0.5);
+    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+}
+
+.card-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    filter: blur(20px);
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.floating-card:hover .card-glow {
+    opacity: 0.1;
+}
+
+/* ==================== HOLOGRAPHIC CARDS ==================== */
+.holographic-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.6s ease;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.holographic-card:before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    background: var(--gradient-holographic);
+    background-size: 400% 400%;
+    border-radius: inherit;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    animation: holographicShift 4s ease-in-out infinite;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.holographic-card:hover:before {
+    opacity: 1;
+}
+
+.card-shine {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(255, 255, 255, 0.1) 25%, 
+        rgba(255, 255, 255, 0.3) 50%, 
+        rgba(255, 255, 255, 0.1) 75%, 
+        transparent 100%
+    );
+    transition: all 0.6s ease;
+    z-index: 1;
+}
+
+.holographic-card:hover .card-shine {
+    left: 100%;
+}
+
+.card-glow-border {
+    position: absolute;
+    inset: -1px;
+    background: var(--gradient-primary);
+    border-radius: inherit;
+    filter: blur(2px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.holographic-card:hover .card-glow-border {
+    opacity: 0.6;
+}
+
+/* ==================== MAGNETIC ELEMENT EFFECTS ==================== */
+.magnetic-element {
+    transition: all 0.3s ease;
+}
+
+.magnetic-element:hover {
+    transform: scale(1.02) translateZ(10px);
+}
+
+/* ==================== FLOATING TECH TAGS ==================== */
+.floating-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.holographic-tag {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.holographic-tag:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(139, 92, 246, 0.3), transparent);
+    transition: all 0.3s ease;
+}
+
+.holographic-tag:hover {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+}
+
+.holographic-tag:hover:before {
+    left: 100%;
+}
+
+/* ==================== GLOW BADGES ==================== */
+.glow-badge {
+    box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+    animation: pulse 2s ease-in-out infinite alternate;
+}
+
+.badge-ai {
+    background: var(--gradient-secondary);
+    color: white;
+    border: none;
+}
+
+/* ==================== TIMELINE ENHANCEMENTS ==================== */
+.glow-marker {
+    box-shadow: 0 0 20px var(--primary-color), var(--neon-glow);
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* ==================== FORM ENHANCEMENTS ==================== */
+.glass-form {
+    width: 100%;
+}
+
+.glass-input {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+.glass-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.glass-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+/* ==================== RESPONSIVE ENHANCEMENTS ==================== */
+@media (max-width: 768px) {
+    .floating-element {
+        display: none;
+    }
+    
+    .bg-gradient-1,
+    .bg-gradient-2,
+    .bg-gradient-3 {
+        width: 150%;
+        height: 150%;
+    }
+    
+    .tilt-card-3d:hover {
+        transform: translateY(-5px);
+    }
+}

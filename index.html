@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hanieh Khaled | Junior Software Developer & Frontend Engineer</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ui_enhancements.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'"">
     <style>
         html, body {
             margin: 0;
@@ -18,12 +19,22 @@
     </style>
 </head>
 <body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+    
+    <!-- Animated Background Gradients -->
+    <div class="bg-gradient-1"></div>
+    <div class="bg-gradient-2"></div>
+    <div class="bg-gradient-3"></div>
+    
     <!-- Floating Elements -->
     <div class="floating-element float-1"></div>
     <div class="floating-element float-2"></div>
+    <div class="floating-element float-3"></div>
+    <div class="floating-element float-4"></div>
 
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar glass-nav">
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">Hanieh Khaled</div>
@@ -59,18 +70,21 @@
                     </div>
                 </div>
                 <div class="hero-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">2+</div>
+                    <div class="stat-card floating-card tilt-card-3d" data-tilt>
+                        <div class="card-glow"></div>
+                        <div class="stat-number gradient-text">2+</div>
                         <div class="stat-label">Years</div>
                         <div class="stat-description">Coding Experience</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">JS/TS</div>
+                    <div class="stat-card floating-card tilt-card-3d" data-tilt>
+                        <div class="card-glow"></div>
+                        <div class="stat-number gradient-text">JS/TS</div>
                         <div class="stat-label">Tech Focus</div>
                         <div class="stat-description">JavaScript & TypeScript</div>
                     </div>
-                    <div class="stat-card">
-                        <div class="stat-number">Open</div>
+                    <div class="stat-card floating-card tilt-card-3d" data-tilt>
+                        <div class="card-glow"></div>
+                        <div class="stat-number gradient-text">Open</div>
                         <div class="stat-label">Available For</div>
                         <div class="stat-description">Internships, Junior Roles, Freelance</div>
                     </div>
@@ -80,137 +94,154 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects parallax-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">Selected work that shows how I build and think.</p>
+                <h2 class="section-title holographic-text">Featured Projects</h2>
+                <p class="section-subtitle glow-text-subtle">Selected work that shows how I build and think.</p>
             </div>
             <div class="projects-grid">
                 <!-- Project 1: Transcendence -->
-                <div class="project-card">
+                <div class="project-card holographic-card tilt-card-3d magnetic-element" data-tilt>
+                    <div class="card-shine"></div>
+                    <div class="card-glow-border"></div>
                     <div class="project-header">
-                        <h3 class="project-title">Transcendence – Real-Time Multiplayer Web App</h3>
-                        <span class="badge badge-success">Capstone</span>
+                        <h3 class="project-title gradient-text">Transcendence – Real-Time Multiplayer Web App</h3>
+                        <span class="badge badge-success glow-badge">Capstone</span>
                     </div>
-                    <p class="project-tagline">Production-style real-time Pong web application with custom frontend architecture.</p>
+                    <p class="project-tagline neon-text">Production-style real-time Pong web application with custom frontend architecture.</p>
                     <p class="project-description">Built a full-stack multiplayer game featuring user authentication, live gameplay, and matchmaking. Implemented backend services with Fastify, WebSocket communication, and containerized deployment with Docker & NGINX as reverse proxy.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">TypeScript</span>
-                        <span class="tech-badge">JavaScript</span>
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">Fastify</span>
-                        <span class="tech-badge">WebSocket</span>
-                        <span class="tech-badge">Docker</span>
-                        <span class="tech-badge">NGINX</span>
+                    <div class="tech-stack floating-tags">
+                        <span class="tech-badge holographic-tag">TypeScript</span>
+                        <span class="tech-badge holographic-tag">JavaScript</span>
+                        <span class="tech-badge holographic-tag">Node.js</span>
+                        <span class="tech-badge holographic-tag">Fastify</span>
+                        <span class="tech-badge holographic-tag">WebSocket</span>
+                        <span class="tech-badge holographic-tag">Docker</span>
+                        <span class="tech-badge holographic-tag">NGINX</span>
                     </div>
                 </div>
 
                 <!-- Project 2: Poll Voting System -->
-                <div class="project-card">
+                <div class="project-card holographic-card tilt-card-3d magnetic-element" data-tilt>
+                    <div class="card-shine"></div>
+                    <div class="card-glow-border"></div>
                     <div class="project-header">
-                        <h3 class="project-title">Poll Voting System</h3>
+                        <h3 class="project-title gradient-text">Poll Voting System</h3>
                     </div>
-                    <p class="project-tagline">Full-stack poll platform with user authentication and real-time vote updates.</p>
+                    <p class="project-tagline neon-text">Full-stack poll platform with user authentication and real-time vote updates.</p>
                     <p class="project-description">Developed a complete polling application with user authentication, poll creation, and real-time vote tracking. Designed backend REST APIs for poll management and data storage, deployed to handle concurrent users efficiently.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">TypeScript</span>
-                        <span class="tech-badge">JavaScript</span>
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">REST APIs</span>
-                        <span class="tech-badge">Docker</span>
+                    <div class="tech-stack floating-tags">
+                        <span class="tech-badge holographic-tag">TypeScript</span>
+                        <span class="tech-badge holographic-tag">JavaScript</span>
+                        <span class="tech-badge holographic-tag">Node.js</span>
+                        <span class="tech-badge holographic-tag">REST APIs</span>
+                        <span class="tech-badge holographic-tag">Docker</span>
                     </div>
                 </div>
 
                 <!-- Project 3: Inception -->
-                <div class="project-card">
+                <div class="project-card holographic-card tilt-card-3d magnetic-element" data-tilt>
+                    <div class="card-shine"></div>
+                    <div class="card-glow-border"></div>
                     <div class="project-header">
-                        <h3 class="project-title">Inception – Container Infrastructure</h3>
+                        <h3 class="project-title gradient-text">Inception – Container Infrastructure</h3>
                     </div>
-                    <p class="project-tagline">Multi-service container architecture with Docker, NGINX, WordPress, and MariaDB.</p>
+                    <p class="project-tagline neon-text">Multi-service container architecture with Docker, NGINX, WordPress, and MariaDB.</p>
                     <p class="project-description">Designed a production-like deployment with separate containers for each service. Configured custom networks, persistent volumes, and SSL/TLS certificates for secure, scalable infrastructure.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Docker</span>
-                        <span class="tech-badge">Docker Compose</span>
-                        <span class="tech-badge">NGINX</span>
-                        <span class="tech-badge">WordPress</span>
-                        <span class="tech-badge">MariaDB</span>
-                        <span class="tech-badge">Linux</span>
+                    <div class="tech-stack floating-tags">
+                        <span class="tech-badge holographic-tag">Docker</span>
+                        <span class="tech-badge holographic-tag">Docker Compose</span>
+                        <span class="tech-badge holographic-tag">NGINX</span>
+                        <span class="tech-badge holographic-tag">WordPress</span>
+                        <span class="tech-badge holographic-tag">MariaDB</span>
+                        <span class="tech-badge holographic-tag">Linux</span>
                     </div>
                 </div>
 
                 <!-- Project 4: IRC Server -->
-                <div class="project-card">
+                <div class="project-card holographic-card tilt-card-3d magnetic-element" data-tilt>
+                    <div class="card-shine"></div>
+                    <div class="card-glow-border"></div>
                     <div class="project-header">
-                        <h3 class="project-title">IRC – Internet Relay Chat Server</h3>
+                        <h3 class="project-title gradient-text">IRC – Internet Relay Chat Server</h3>
                     </div>
-                    <p class="project-tagline">Real-time IRC server in C++ using TCP/IP socket programming.</p>
+                    <p class="project-tagline neon-text">Real-time IRC server in C++ using TCP/IP socket programming.</p>
                     <p class="project-description">Implemented a fully functional IRC server supporting channels, private messaging, authentication, and multiple concurrent clients. Built with robust command parsing and multiplexing for handling simultaneous connections.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">C++</span>
-                        <span class="tech-badge">TCP/IP</span>
-                        <span class="tech-badge">Sockets</span>
-                        <span class="tech-badge">Linux</span>
+                    <div class="tech-stack floating-tags">
+                        <span class="tech-badge holographic-tag">C++</span>
+                        <span class="tech-badge holographic-tag">TCP/IP</span>
+                        <span class="tech-badge holographic-tag">Sockets</span>
+                        <span class="tech-badge holographic-tag">Linux</span>
                     </div>
                 </div>
 
                 <!-- Project 5: Cub3D -->
-                <div class="project-card">
+                <div class="project-card holographic-card tilt-card-3d magnetic-element" data-tilt>
+                    <div class="card-shine"></div>
+                    <div class="card-glow-border"></div>
                     <div class="project-header">
-                        <h3 class="project-title">Cub3D – 3D Game Engine</h3>
+                        <h3 class="project-title gradient-text">Cub3D – 3D Game Engine</h3>
                     </div>
-                    <p class="project-tagline">Mini 3D engine inspired by Wolfenstein 3D using raycasting techniques.</p>
+                    <p class="project-tagline neon-text">Mini 3D engine inspired by Wolfenstein 3D using raycasting techniques.</p>
                     <p class="project-description">Built a 3D rendering engine in C featuring texture mapping, collision detection, and smooth player movement with real-time input handling. Implemented raycasting algorithms for realistic 3D perspective.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">C</span>
-                        <span class="tech-badge">Raycasting</span>
-                        <span class="tech-badge">Graphics</span>
-                        <span class="tech-badge">Math</span>
+                    <div class="tech-stack floating-tags">
+                        <span class="tech-badge holographic-tag">C</span>
+                        <span class="tech-badge holographic-tag">Raycasting</span>
+                        <span class="tech-badge holographic-tag">Graphics</span>
+                        <span class="tech-badge holographic-tag">Math</span>
                     </div>
                 </div>
 
                 <!-- Project 6: AI Desktop Assistant -->
-                <div class="project-card">
+                <div class="project-card holographic-card tilt-card-3d magnetic-element" data-tilt>
+                    <div class="card-shine"></div>
+                    <div class="card-glow-border"></div>
                     <div class="project-header">
-                        <h3 class="project-title">AI Desktop Assistant</h3>
+                        <h3 class="project-title gradient-text">AI Desktop Assistant</h3>
+                        <span class="badge badge-ai glow-badge">AI</span>
                     </div>
-                    <p class="project-tagline">LLM-powered desktop assistant with GUI and system automation.</p>
+                    <p class="project-tagline neon-text">LLM-powered desktop assistant with GUI and system automation.</p>
                     <p class="project-description">A Python desktop assistant with GUI that understands natural language commands, calls an LLM for Q&A, and automates tasks like web search, screenshots, volume, and brightness control on local PC.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">AI/ML</span>
-                        <span class="tech-badge">LLM</span>
-                        <span class="tech-badge">GUI</span>
+                    <div class="tech-stack floating-tags">
+                        <span class="tech-badge holographic-tag">Python</span>
+                        <span class="tech-badge holographic-tag">AI/ML</span>
+                        <span class="tech-badge holographic-tag">LLM</span>
+                        <span class="tech-badge holographic-tag">GUI</span>
                     </div>
                 </div>
 
                 <!-- Project 7: Student Budget Assistant -->
-                <div class="project-card">
+                <div class="project-card holographic-card tilt-card-3d magnetic-element" data-tilt>
+                    <div class="card-shine"></div>
+                    <div class="card-glow-border"></div>
                     <div class="project-header">
-                        <h3 class="project-title">Student Budget Assistant</h3>
+                        <h3 class="project-title gradient-text">Student Budget Assistant</h3>
                     </div>
-                    <p class="project-tagline">Console-based budget assistant for tracking monthly student spending.</p>
+                    <p class="project-tagline neon-text">Console-based budget assistant for tracking monthly student spending.</p>
                     <p class="project-description">A Python console app for student dorms that collects monthly budgets, tracks expenses across categories like food, transport, rent, utilities, and entertainment. Calculates totals, remaining balance, and provides real-time feedback on budget status.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">CLI</span>
-                        <span class="tech-badge">Data Management</span>
+                    <div class="tech-stack floating-tags">
+                        <span class="tech-badge holographic-tag">Python</span>
+                        <span class="tech-badge holographic-tag">CLI</span>
+                        <span class="tech-badge holographic-tag">Data Management</span>
                     </div>
                 </div>
 
                 <!-- Project 8: AI ERP Assistant -->
-                <div class="project-card">
+                <div class="project-card holographic-card tilt-card-3d magnetic-element" data-tilt>
+                    <div class="card-shine"></div>
+                    <div class="card-glow-border"></div>
                     <div class="project-header">
-                        <h3 class="project-title">AI-Powered ERP Assistant</h3>
-                        <span class="badge badge-info">Prototype</span>
+                        <h3 class="project-title gradient-text">AI-Powered ERP Assistant</h3>
+                        <span class="badge badge-info glow-badge">Prototype</span>
                     </div>
-                    <p class="project-tagline">AI-powered assistant using natural language and autonomous agents.</p>
+                    <p class="project-tagline neon-text">AI-powered assistant using natural language and autonomous agents.</p>
                     <p class="project-description">Prototyped an intelligent ERP assistant that uses natural language processing and autonomous agents to handle routine business tasks, streamline workflows, and improve operational efficiency.</p>
-                    <div class="tech-stack">
-                        <span class="tech-badge">Python</span>
-                        <span class="tech-badge">AI/ML</span>
-                        <span class="tech-badge">NLP</span>
-                        <span class="tech-badge">Agent Frameworks</span>
+                    <div class="tech-stack floating-tags">
+                        <span class="tech-badge holographic-tag">Python</span>
+                        <span class="tech-badge holographic-tag">AI/ML</span>
+                        <span class="tech-badge holographic-tag">NLP</span>
+                        <span class="tech-badge holographic-tag">Agent Frameworks</span>
                     </div>
                 </div>
             </div>
@@ -218,14 +249,15 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="skills">
+    <section id="skills" class="skills parallax-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Skills & Technologies</h2>
+                <h2 class="section-title holographic-text">Skills & Technologies</h2>
             </div>
             <div class="skills-grid">
-                <div class="skill-category">
-                    <h3 class="category-title">
+                <div class="skill-category floating-card tilt-card-3d" data-tilt>
+                    <div class="card-glow"></div>
+                    <h3 class="category-title gradient-text">
                         Programming Languages
                     </h3>
                     <div class="skill-pills">
@@ -237,71 +269,76 @@
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3 class="category-title">
+                <div class="skill-category floating-card tilt-card-3d" data-tilt>
+                    <div class="card-glow"></div>
+                    <h3 class="category-title gradient-text">
                         Frontend & UI
                     </h3>
                     <div class="skill-pills">
-                        <span class="skill-pill">HTML5</span>
-                        <span class="skill-pill">CSS3</span>
-                        <span class="skill-pill">Responsive Design</span>
-                        <span class="skill-pill">React</span>
-                        <span class="skill-pill">Vanilla JS</span>
+                        <span class="skill-pill holographic-tag">HTML5</span>
+                        <span class="skill-pill holographic-tag">CSS3</span>
+                        <span class="skill-pill holographic-tag">Responsive Design</span>
+                        <span class="skill-pill holographic-tag">React</span>
+                        <span class="skill-pill holographic-tag">Vanilla JS</span>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3 class="category-title">
+                <div class="skill-category floating-card tilt-card-3d" data-tilt>
+                    <div class="card-glow"></div>
+                    <h3 class="category-title gradient-text">
                         Backend & Infrastructure
                     </h3>
                     <div class="skill-pills">
-                        <span class="skill-pill">Node.js</span>
-                        <span class="skill-pill">Fastify</span>
-                        <span class="skill-pill">REST APIs</span>
-                        <span class="skill-pill">WebSocket</span>
-                        <span class="skill-pill">TCP/IP</span>
-                        <span class="skill-pill">Socket Programming</span>
+                        <span class="skill-pill holographic-tag">Node.js</span>
+                        <span class="skill-pill holographic-tag">Fastify</span>
+                        <span class="skill-pill holographic-tag">REST APIs</span>
+                        <span class="skill-pill holographic-tag">WebSocket</span>
+                        <span class="skill-pill holographic-tag">TCP/IP</span>
+                        <span class="skill-pill holographic-tag">Socket Programming</span>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3 class="category-title">
+                <div class="skill-category floating-card tilt-card-3d" data-tilt>
+                    <div class="card-glow"></div>
+                    <h3 class="category-title gradient-text">
                         DevOps & Tools
                     </h3>
                     <div class="skill-pills">
-                        <span class="skill-pill">Docker</span>
-                        <span class="skill-pill">Docker Compose</span>
-                        <span class="skill-pill">NGINX</span>
-                        <span class="skill-pill">Git & GitHub</span>
-                        <span class="skill-pill">Linux</span>
-                        <span class="skill-pill">SSL/TLS</span>
+                        <span class="skill-pill holographic-tag">Docker</span>
+                        <span class="skill-pill holographic-tag">Docker Compose</span>
+                        <span class="skill-pill holographic-tag">NGINX</span>
+                        <span class="skill-pill holographic-tag">Git & GitHub</span>
+                        <span class="skill-pill holographic-tag">Linux</span>
+                        <span class="skill-pill holographic-tag">SSL/TLS</span>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3 class="category-title">
+                <div class="skill-category floating-card tilt-card-3d" data-tilt>
+                    <div class="card-glow"></div>
+                    <h3 class="category-title gradient-text">
                         AI & Specialized
                     </h3>
                     <div class="skill-pills">
-                        <span class="skill-pill">AI/ML Tools</span>
-                        <span class="skill-pill">LLM Integration</span>
-                        <span class="skill-pill">NLP</span>
-                        <span class="skill-pill">Agent Frameworks</span>
-                        <span class="skill-pill">Graphics/Raycasting</span>
+                        <span class="skill-pill holographic-tag">AI/ML Tools</span>
+                        <span class="skill-pill holographic-tag">LLM Integration</span>
+                        <span class="skill-pill holographic-tag">NLP</span>
+                        <span class="skill-pill holographic-tag">Agent Frameworks</span>
+                        <span class="skill-pill holographic-tag">Graphics/Raycasting</span>
                     </div>
                 </div>
 
-                <div class="skill-category">
-                    <h3 class="category-title">
+                <div class="skill-category floating-card tilt-card-3d" data-tilt>
+                    <div class="card-glow"></div>
+                    <h3 class="category-title gradient-text">
                         Core Competencies
                     </h3>
                     <div class="skill-pills">
-                        <span class="skill-pill">Algorithms</span>
-                        <span class="skill-pill">Data Structures</span>
-                        <span class="skill-pill">System Design</span>
-                        <span class="skill-pill">Problem Solving</span>
-                        <span class="skill-pill">Debugging</span>
-                        <span class="skill-pill">Teamwork</span>
+                        <span class="skill-pill holographic-tag">Algorithms</span>
+                        <span class="skill-pill holographic-tag">Data Structures</span>
+                        <span class="skill-pill holographic-tag">System Design</span>
+                        <span class="skill-pill holographic-tag">Problem Solving</span>
+                        <span class="skill-pill holographic-tag">Debugging</span>
+                        <span class="skill-pill holographic-tag">Teamwork</span>
                     </div>
                 </div>
             </div>
@@ -309,17 +346,19 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="experience">
+    <section id="experience" class="experience parallax-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Experience & Activities</h2>
+                <h2 class="section-title holographic-text">Experience & Activities</h2>
             </div>
             <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                <div class="timeline-item holographic-card tilt-card-3d magnetic-element" data-tilt>
+                    <div class="card-shine"></div>
+                    <div class="card-glow-border"></div>
+                    <div class="timeline-marker glow-marker"></div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">42 Abu Dhabi – Software Development Student</h3>
-                        <p class="timeline-location">Abu Dhabi, UAE</p>
+                        <h3 class="timeline-title gradient-text">42 Abu Dhabi – Software Development Student</h3>
+                        <p class="timeline-location neon-text">Abu Dhabi, UAE</p>
                         <ul class="timeline-list">
                             <li>Developed multiple C projects focusing on algorithms, data structures, and memory management</li>
                             <li>Built full-stack web applications using modern JavaScript frameworks and REST APIs</li>
@@ -330,11 +369,13 @@
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
+                <div class="timeline-item holographic-card tilt-card-3d magnetic-element" data-tilt>
+                    <div class="card-shine"></div>
+                    <div class="card-glow-border"></div>
+                    <div class="timeline-marker glow-marker"></div>
                     <div class="timeline-content">
-                        <h3 class="timeline-title">Events & Hackathons</h3>
-                        <p class="timeline-location">Various Locations</p>
+                        <h3 class="timeline-title gradient-text">Events & Hackathons</h3>
+                        <p class="timeline-location neon-text">Various Locations</p>
                         <ul class="timeline-list">
                             <li>Actively participated in coding events and technical workshops to expand skills</li>
                             <li>Engaged in AI hackathons exploring machine learning applications and innovative solutions</li>
@@ -348,27 +389,29 @@
     </section>
 
     <!-- Education Section -->
-    <section id="education" class="education">
+    <section id="education" class="education parallax-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Education</h2>
+                <h2 class="section-title holographic-text">Education</h2>
             </div>
             <div class="education-grid">
-                <div class="education-card">
-                    <div class="education-icon">🎓</div>
-                    <h3 class="education-title">42 Abu Dhabi – Software Development Program</h3>
-                    <p class="education-location">📍 Abu Dhabi, UAE</p>
+                <div class="education-card holographic-card tilt-card-3d magnetic-element" data-tilt>
+                    <div class="card-shine"></div>
+                    <div class="card-glow-border"></div>
+                    <div class="education-icon gradient-text">🎓</div>
+                    <h3 class="education-title gradient-text">42 Abu Dhabi – Software Development Program</h3>
+                    <p class="education-location neon-text">📍 Abu Dhabi, UAE</p>
                     <p class="education-description">
                         Intensive, project-based software development program focusing on C programming, 
                         algorithms, Unix systems, Git version control, and full-stack web development. 
                         Emphasis on peer learning, problem-solving, and autonomous learning.
                     </p>
                     <div class="education-highlights">
-                        <span class="highlight-pill">C Programming</span>
-                        <span class="highlight-pill">Algorithms</span>
-                        <span class="highlight-pill">Unix/Linux</span>
-                        <span class="highlight-pill">Git</span>
-                        <span class="highlight-pill">Web Development</span>
+                        <span class="highlight-pill holographic-tag">C Programming</span>
+                        <span class="highlight-pill holographic-tag">Algorithms</span>
+                        <span class="highlight-pill holographic-tag">Unix/Linux</span>
+                        <span class="highlight-pill holographic-tag">Git</span>
+                        <span class="highlight-pill holographic-tag">Web Development</span>
                     </div>
                 </div>
             </div>
@@ -376,49 +419,59 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact parallax-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Get in Touch</h2>
-                <p class="section-subtitle">Open to junior developer roles, internships, and interesting projects.</p>
+                <h2 class="section-title holographic-text">Get in Touch</h2>
+                <p class="section-subtitle glow-text-subtle">Open to junior developer roles, internships, and interesting projects.</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <div class="contact-item">
+                    <div class="contact-item floating-card tilt-card-3d magnetic-element" data-tilt>
+                        <div class="card-glow"></div>
                         <div>
-                            <h4>Email</h4>
-                            <a href="mailto:haniehk43@gmail.com">haniehk43@gmail.com</a>
+                            <h4 class="gradient-text">Email</h4>
+                            <a href="mailto:haniehk43@gmail.com" class="neon-text">haniehk43@gmail.com</a>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item floating-card tilt-card-3d magnetic-element" data-tilt>
+                        <div class="card-glow"></div>
                         <div>
-                            <h4>LinkedIn</h4>
-                            <a href="https://www.linkedin.com/in/hanieh-khaled-661293296/" target="_blank">linkedin.com/in/hanieh-khaled-661293296</a>
+                            <h4 class="gradient-text">LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/hanieh-khaled-661293296/" target="_blank" class="neon-text">linkedin.com/in/hanieh-khaled-661293296</a>
                         </div>
                     </div>
-                    <div class="contact-item">
+                    <div class="contact-item floating-card tilt-card-3d magnetic-element" data-tilt>
+                        <div class="card-glow"></div>
                         <div>
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/hankhali" target="_blank">github.com/hankhali</a>
+                            <h4 class="gradient-text">GitHub</h4>
+                            <a href="https://github.com/hankhali" target="_blank" class="neon-text">github.com/hankhali</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="contact-form-wrapper">
-                    <form class="contact-form" id="contactForm">
+                <div class="contact-form-wrapper holographic-card tilt-card-3d" data-tilt>
+                    <div class="card-shine"></div>
+                    <div class="card-glow-border"></div>
+                    <form class="contact-form glass-form" id="contactForm">
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                            <label for="name" class="gradient-text">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required class="glass-input">
                         </div>
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                            <label for="email" class="gradient-text">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required class="glass-input">
                         </div>
                         <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+                            <label for="message" class="gradient-text">Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your message..." required class="glass-input"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        <button type="submit" class="btn btn-primary btn-full holographic-btn magnetic-btn" data-text="Send Message">
+                            <span class="btn-content">
+                                <span class="btn-text">Send Message</span>
+                                <div class="btn-particles"></div>
+                            </span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -426,19 +479,20 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer glass-nav">
         <div class="container">
             <div class="footer-content">
-                <p class="footer-text">© 2025 Hanieh Khaled</p>
+                <p class="footer-text gradient-text">© 2025 Hanieh Khaled</p>
                 <div class="footer-links">
-                    <a href="https://github.com/hankhali" target="_blank" class="footer-link">GitHub</a>
-                    <a href="https://www.linkedin.com/in/hanieh-khaled-661293296/" target="_blank" class="footer-link">LinkedIn</a>
-                    <a href="mailto:haniehk43@gmail.com" class="footer-link">Email</a>
+                    <a href="https://github.com/hankhali" target="_blank" class="footer-link magnetic-btn">GitHub</a>
+                    <a href="https://www.linkedin.com/in/hanieh-khaled-661293296/" target="_blank" class="footer-link magnetic-btn">LinkedIn</a>
+                    <a href="mailto:haniehk43@gmail.com" class="footer-link magnetic-btn">Email</a>
                 </div>
             </div>
         </div>
     </footer>
 
     <script src="script.js" defer></script>
+    <script src="cursor_effects.js" defer></script>
 </body>
 </html>
