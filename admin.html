@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - Portfolio Admin</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #1a1a2e;
+            color: white;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            color: #8b5cf6;
+            margin-bottom: 10px;
+        }
+        .message {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            backdrop-filter: blur(10px);
+        }
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .sender {
+            font-weight: bold;
+            color: #8b9eff;
+        }
+        .timestamp {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        .email {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+        }
+        .message-content {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            line-height: 1.5;
+        }
+        .no-messages {
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-style: italic;
+        }
+        .refresh-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Portfolio Messages</h1>
+        <button class="refresh-btn" onclick="loadMessages()">Refresh</button>
+    </div>
+    <div id="messages-container">
+        <div class="no-messages">Loading messages...</div>
+    </div>
+
+    <script>
+        async function loadMessages() {
+            try {
+                const response = await fetch('/admin/messages');
+                const messages = await response.json();
+                
+                const container = document.getElementById('messages-container');
+                
+                if (messages.length === 0) {
+                    container.innerHTML = '<div class="no-messages">No messages yet.</div>';
+                    return;
+                }
+                
+                container.innerHTML = messages
+                    .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp))
+                    .map(msg => `
+                        <div class="message">
+                            <div class="message-header">
+                                <div class="sender">${msg.name}</div>
+                                <div class="timestamp">${new Date(msg.timestamp).toLocaleString()}</div>
+                            </div>
+                            <div class="email">📧 ${msg.email}</div>
+                            <div class="message-content">${msg.message}</div>
+                        </div>
+                    `).join('');
+            } catch (error) {
+                document.getElementById('messages-container').innerHTML = 
+                    '<div class="no-messages">Error loading messages.</div>';
+            }
+        }
+        
+        // Load messages on page load
+        loadMessages();
+        
+        // Auto-refresh every 30 seconds
+        setInterval(loadMessages, 30000);
+    </script>
+</body>
+</html>
