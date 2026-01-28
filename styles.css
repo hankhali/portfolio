@@ -265,10 +265,6 @@ body::after {
     background: linear-gradient(135deg, #8b5cf6, #ec4899);
     color: white;
     box-shadow: 0 8px 25px rgba(139, 92, 246, 0.3);
-    padding: 0.75rem 2rem;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 8px;
 }
 
 .btn-primary::before {
@@ -369,6 +365,18 @@ body::after {
     display: flex;
     gap: var(--spacing-md);
     margin-top: var(--spacing-lg);
+    align-items: center;
+}
+
+.hero-buttons .btn {
+    padding: 0.75rem 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
 }
 
 .hero-stats {
