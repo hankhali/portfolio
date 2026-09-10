@@ -1,4 +1,8 @@
+node_modules/
+.DS_Store
+.env
+.env.*
 .vercel
-
-# Local Netlify folder
 .netlify
+messages.json
+messages.txt
