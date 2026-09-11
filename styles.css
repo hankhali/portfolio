@@ -740,14 +740,47 @@ section { position: relative; padding-block: var(--section-y); }
 /* --- Background: tiles -------------------------------------------------- */
 
 .tiles { display: grid; gap: 0.875rem; grid-template-columns: 1fr; }
-@media (min-width: 900px) { .tiles { grid-template-columns: repeat(3, 1fr); align-items: start; } }
-.tile { padding: clamp(1.5rem, 3vw, 2rem); }
+@media (min-width: 900px) { .tiles { grid-template-columns: repeat(3, 1fr); } }
+
+/* The three cards carry unequal copy, so both ends are anchored: a rule sits
+   under every title at the same height (the title reserves two lines), and
+   margin-top:auto pins each bullet list to the bottom. The paragraph takes up
+   whatever slack is left, so nothing reads as ragged at any width. */
+.tile { display: flex; flex-direction: column; padding: clamp(1.5rem, 3vw, 2rem); }
+
 .entry-meta { font-size: 0.8125rem; color: var(--text-faint); }
-.tile h3 { margin-top: 0.75rem; font-size: 1.25rem; font-weight: 700; }
-.tile h3 + p { margin-top: 0.75rem; color: var(--text-muted); font-size: 0.9688rem; }
-.tile ul { margin-top: 1rem; display: grid; gap: 0.5rem; color: var(--text-muted); font-size: 0.9375rem; }
+
+.tile h3 {
+  margin-top: 0.75rem;
+  min-height: calc(2.5em + 1.125rem);
+  padding-bottom: 1.125rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.tile h3 + p {
+  margin-top: 1.125rem;
+  color: var(--text-muted);
+  font-size: 0.9688rem;
+}
+
+.tile ul {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  color: var(--text-muted);
+  font-size: 0.9375rem;
+}
 .tile ul li { position: relative; padding-left: 1.125rem; }
-.tile ul li::before { content: ""; position: absolute; left: 0; top: 0.75em; width: 6px; height: 6px; border-radius: 50%; background: var(--grad-btn); }
+.tile ul li::before {
+  content: "";
+  position: absolute; left: 0; top: 0.72em;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--grad-btn);
+}
 
 /* --- Contact ------------------------------------------------------------ */
 
