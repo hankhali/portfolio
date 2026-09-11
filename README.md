@@ -20,6 +20,21 @@ assets/vendor/      three.module.min.js (r160), self-hosted
 Hanieh_Khaled_CV.pdf
 ```
 
+## Deploying
+
+`styles.css`, `main.js` and `scene.js` have stable filenames, so browsers that
+cached them keep their copy until the old `max-age` expires regardless of what
+headers we send afterwards. Before deploying, stamp content hashes onto the
+asset URLs so a change always produces a new URL:
+
+```bash
+python3 tools/stamp.py
+netlify deploy --prod --dir=.
+```
+
+The HTML itself is served with `max-age=0, must-revalidate`, so a stamped
+reference reaches the browser immediately.
+
 ## Running locally
 
 No dependencies. Serve the directory over HTTP:

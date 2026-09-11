@@ -201,7 +201,7 @@
     if (conn.saveData) return;
     var lowPower = window.innerWidth < 700 || (conn.effectiveType && /2g|3g/.test(conn.effectiveType));
 
-    import('./scene.js').then(function (mod) {
+    import('./scene.js?v=d8aeddfa68').then(function (mod) {
       scene = mod.mountScene(stage, { theme: currentTheme(), lowPower: lowPower, state: activeState });
     }).catch(function (err) {
       if (window.console) console.warn('3D stage unavailable:', err);
