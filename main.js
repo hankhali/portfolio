@@ -1,6 +1,6 @@
 /* Hanieh Khaled — portfolio behaviour.
-   Theme, scroll reveal, header state, scrollspy, cursor spotlight, and the
-   chapter-driven WebGL stage. */
+   Theme, scroll reveal, header state, scrollspy, cursor spotlight, card tilt,
+   and the chapter-driven WebGL stage. */
 
 (function () {
   'use strict';
@@ -109,6 +109,36 @@
         el.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100).toFixed(2) + '%');
       });
     }
+  }
+
+  /* --- 3D tilt on cards ------------------------------------------------- */
+  // Pointer position drives --rx/--ry; the CSS above turns those into a real
+  // rotation inside the .tiles perspective. Pointer devices only.
+
+  if (canHover && !reduceMotion) {
+    document.querySelectorAll('[data-tilt]').forEach(function (card) {
+      var raf = 0, last = null;
+
+      function apply() {
+        raf = 0;
+        var r = card.getBoundingClientRect();
+        var px = (last.clientX - r.left) / r.width;
+        var py = (last.clientY - r.top) / r.height;
+        card.style.setProperty('--ry', ((px - 0.5) * 8).toFixed(2) + 'deg');
+        card.style.setProperty('--rx', ((0.5 - py) * 6).toFixed(2) + 'deg');
+      }
+
+      card.addEventListener('pointermove', function (e) {
+        last = e;
+        card.classList.add('is-tilting');
+        if (!raf) raf = requestAnimationFrame(apply);
+      }, { passive: true });
+      card.addEventListener('pointerleave', function () {
+        card.classList.remove('is-tilting');
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+      });
+    });
   }
 
   /* --- Story: chapters drive the stage --------------------------------- */
