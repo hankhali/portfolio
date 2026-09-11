@@ -39,29 +39,30 @@
 :root {
   color-scheme: dark;
 
-  /* Palette: space-indigo / dusty-grape / lilac-ash / almond-silk / parchment.
-     Every pair below is checked against WCAG AA on its own background. */
-  --bg:            #22223b;     /* space-indigo */
-  --bg-2:          #2b2b47;     /* lifted surface, derived from space-indigo */
-  --text:          #f2e9e4;     /* parchment    — 12.9:1 */
-  --text-muted:    #c9ada7;     /* almond-silk  —  7.4:1 */
-  --text-faint:    #a2939f;     /* lilac-ash, lifted a touch so it also clears
-                                   AA on the raised card surfaces (4.3:1 raw) */
-  --border:        rgba(242, 233, 228, 0.11);
-  --border-strong: rgba(242, 233, 228, 0.24);
-  --glass:         rgba(242, 233, 228, 0.045);
-  --glass-strong:  rgba(242, 233, 228, 0.08);
+  /* Palette: old-rose / rosy-taupe / grey-olive / dim-grey / deep-space-blue.
+     The ground is deep-space-blue darkened one step so that rosy-taupe,
+     grey-olive and old-rose all clear WCAG AA on it; deep-space-blue itself
+     becomes the raised surface. */
+  --bg:            #1a2b40;     /* deep-space-blue, darkened for the ground */
+  --bg-2:          #253d5b;     /* deep-space-blue */
+  --text:          #e9dfda;     /* derived light tint — 11.0:1 (see note) */
+  --text-muted:    #b79d94;     /* rosy-taupe   —  5.7:1 */
+  --text-faint:    #969696;     /* grey-olive   —  4.9:1 */
+  --border:        rgba(183, 157, 148, 0.16);
+  --border-strong: rgba(183, 157, 148, 0.34);
+  --glass:         rgba(233, 223, 218, 0.045);
+  --glass-strong:  rgba(233, 223, 218, 0.08);
 
-  --accent:        #c9ada7;     /* almond-silk  —  7.4:1 */
-  --accent-2:      #9a8c98;     /* lilac-ash    —  4.8:1 */
-  --accent-3:      #f2e9e4;     /* parchment, for scene sparks and glows */
-  --accent-rgb:    201, 173, 167;
-  --accent-2-rgb:  154, 140, 152;
-  --accent-3-rgb:  242, 233, 228;
+  --accent:        #c6878f;     /* old-rose     —  5.0:1 */
+  --accent-2:      #b79d94;     /* rosy-taupe   —  5.7:1 */
+  --accent-3:      #e9dfda;     /* light tint, for scene sparks and glows */
+  --accent-rgb:    198, 135, 143;
+  --accent-2-rgb:  183, 157, 148;
+  --accent-3-rgb:  233, 223, 218;
 
-  --grad:          linear-gradient(110deg, #f2e9e4 0%, #c9ada7 38%, #9a8c98 74%, #c9ada7 100%);
-  --grad-btn:      linear-gradient(120deg, #c9ada7, #9a8c98);
-  --on-accent:     #22223b;     /* text that sits on --grad-btn */
+  --grad:          linear-gradient(110deg, #e9dfda 0%, #c6878f 40%, #b79d94 76%, #c6878f 100%);
+  --grad-btn:      linear-gradient(120deg, #c6878f, #b79d94);
+  --on-accent:     #1a2b40;     /* text that sits on --grad-btn */
 
   --orb-opacity:   0.5;
   --grain-opacity: 0.05;
@@ -78,29 +79,30 @@
 :root[data-theme="light"] {
   color-scheme: light;
 
-  /* On parchment, lilac-ash (2.7:1) and almond-silk (1.8:1) are both illegible
-     as text, so the muted tone and the accent are darkened members of the same
-     two families rather than new hues. */
-  --bg:            #f2e9e4;     /* parchment */
-  --bg-2:          #fbf7f5;     /* lifted surface, derived from parchment */
-  --text:          #22223b;     /* space-indigo — 12.9:1 */
-  --text-muted:    #4a4e69;     /* dusty-grape  —  6.8:1 */
-  --text-faint:    #675c6b;     /* lilac-ash darkened —  5.3:1 */
-  --border:        rgba(34, 34, 59, 0.12);
-  --border-strong: rgba(34, 34, 59, 0.26);
-  --glass:         rgba(255, 255, 255, 0.55);
-  --glass-strong:  rgba(255, 255, 255, 0.82);
+  /* This palette has no light tone — its lightest member, rosy-taupe, only
+     reaches 4.4:1 against its darkest, so none of the five can serve as a page
+     ground. The background here is derived, and old-rose (2.6:1 on it) is
+     darkened to work as an accent. */
+  --bg:            #f4f1ef;     /* derived warm off-white */
+  --bg-2:          #ffffff;
+  --text:          #253d5b;     /* deep-space-blue — 9.8:1 */
+  --text-muted:    #5c5e70;     /* dim-grey darkened —  5.7:1 */
+  --text-faint:    #67697c;     /* dim-grey        —  4.8:1 */
+  --border:        rgba(37, 61, 91, 0.14);
+  --border-strong: rgba(37, 61, 91, 0.30);
+  --glass:         rgba(255, 255, 255, 0.6);
+  --glass-strong:  rgba(255, 255, 255, 0.85);
 
-  --accent:        #7e5248;     /* almond-silk darkened —  5.5:1 */
-  --accent-2:      #4a4e69;     /* dusty-grape          —  6.8:1 */
-  --accent-3:      #74483f;     /* deepest rose         —  6.4:1 */
-  --accent-rgb:    126, 82, 72;
-  --accent-2-rgb:  74, 78, 105;
-  --accent-3-rgb:  116, 72, 63;
+  --accent:        #8d4f58;     /* old-rose darkened —  5.5:1 */
+  --accent-2:      #253d5b;     /* deep-space-blue   —  9.8:1 */
+  --accent-3:      #7d4650;     /* deepest rose      —  6.5:1 */
+  --accent-rgb:    141, 79, 88;
+  --accent-2-rgb:  37, 61, 91;
+  --accent-3-rgb:  125, 70, 80;
 
-  --grad:          linear-gradient(110deg, #22223b 0%, #4a4e69 40%, #7e5248 100%);
-  --grad-btn:      linear-gradient(120deg, #4a4e69, #22223b);
-  --on-accent:     #f2e9e4;
+  --grad:          linear-gradient(110deg, #253d5b 0%, #5c5e70 44%, #8d4f58 100%);
+  --grad-btn:      linear-gradient(120deg, #253d5b, #67697c);
+  --on-accent:     #f4f1ef;
 
   --orb-opacity:   0.45;
   --grain-opacity: 0.035;
