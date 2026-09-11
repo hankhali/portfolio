@@ -150,9 +150,11 @@ void main(){
 }`;
 
 const THEMES = {
-  dark:  { a: '#7c5cff', b: '#22d3ee', c: '#f472b6', dust: '#a78bfa',
-           base: 0.4, glow: 1.5, bright: 1.35, blend: THREE.AdditiveBlending },
-  light: { a: '#5b21b6', b: '#0e7490', c: '#be185d', dust: '#6d28d9',
+  // Palette tones. The dark base is space-indigo rather than near-black, so the
+  // additive pass is pushed harder to keep the object from washing out.
+  dark:  { a: '#c9ada7', b: '#9a8c98', c: '#f2e9e4', dust: '#c9ada7',
+           base: 0.7, glow: 2.2, bright: 1.8, blend: THREE.AdditiveBlending },
+  light: { a: '#4a4e69', b: '#22223b', c: '#7e5248', dust: '#4a4e69',
            base: 0.95, glow: 1.0, bright: 0.85, blend: THREE.NormalBlending },
 };
 

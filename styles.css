@@ -39,28 +39,32 @@
 :root {
   color-scheme: dark;
 
-  --bg:            #07070c;
-  --bg-2:          #0c0c14;
-  --text:          #f4f4f8;
-  --text-muted:    #a6a6b8;     /* 8.9:1 on --bg */
-  --text-faint:    #8d8da0;     /* 6.4:1 on --bg */
-  --border:        rgba(255, 255, 255, 0.09);
-  --border-strong: rgba(255, 255, 255, 0.18);
-  --glass:         rgba(255, 255, 255, 0.035);
-  --glass-strong:  rgba(255, 255, 255, 0.06);
+  /* Palette: space-indigo / dusty-grape / lilac-ash / almond-silk / parchment.
+     Every pair below is checked against WCAG AA on its own background. */
+  --bg:            #22223b;     /* space-indigo */
+  --bg-2:          #2b2b47;     /* lifted surface, derived from space-indigo */
+  --text:          #f2e9e4;     /* parchment    — 12.9:1 */
+  --text-muted:    #c9ada7;     /* almond-silk  —  7.4:1 */
+  --text-faint:    #a2939f;     /* lilac-ash, lifted a touch so it also clears
+                                   AA on the raised card surfaces (4.3:1 raw) */
+  --border:        rgba(242, 233, 228, 0.11);
+  --border-strong: rgba(242, 233, 228, 0.24);
+  --glass:         rgba(242, 233, 228, 0.045);
+  --glass-strong:  rgba(242, 233, 228, 0.08);
 
-  --accent:        #a78bfa;     /* violet — 8.1:1 on --bg */
-  --accent-2:      #22d3ee;     /* cyan */
-  --accent-3:      #f472b6;     /* pink, used only in the 3D scene and glows */
-  --accent-rgb:    167, 139, 250;
-  --accent-2-rgb:  34, 211, 238;
-  --accent-3-rgb:  244, 114, 182;
+  --accent:        #c9ada7;     /* almond-silk  —  7.4:1 */
+  --accent-2:      #9a8c98;     /* lilac-ash    —  4.8:1 */
+  --accent-3:      #f2e9e4;     /* parchment, for scene sparks and glows */
+  --accent-rgb:    201, 173, 167;
+  --accent-2-rgb:  154, 140, 152;
+  --accent-3-rgb:  242, 233, 228;
 
-  --grad:          linear-gradient(110deg, #c4b5fd 0%, #a78bfa 30%, #22d3ee 70%, #67e8f9 100%);
-  --grad-btn:      linear-gradient(120deg, #8b5cf6, #22d3ee);
+  --grad:          linear-gradient(110deg, #f2e9e4 0%, #c9ada7 38%, #9a8c98 74%, #c9ada7 100%);
+  --grad-btn:      linear-gradient(120deg, #c9ada7, #9a8c98);
+  --on-accent:     #22223b;     /* text that sits on --grad-btn */
 
-  --orb-opacity:   0.55;
-  --grain-opacity: 0.045;
+  --orb-opacity:   0.5;
+  --grain-opacity: 0.05;
 
   --section-y: clamp(5.5rem, 12vw, 10rem);
   --gutter:    clamp(1.25rem, 5vw, 2.5rem);
@@ -74,28 +78,32 @@
 :root[data-theme="light"] {
   color-scheme: light;
 
-  --bg:            #f6f6fb;
-  --bg-2:          #ffffff;
-  --text:          #0b0b14;
-  --text-muted:    #4a4a60;     /* 8.4:1 */
-  --text-faint:    #5f5f78;     /* 6.0:1 */
-  --border:        rgba(11, 11, 20, 0.09);
-  --border-strong: rgba(11, 11, 20, 0.2);
+  /* On parchment, lilac-ash (2.7:1) and almond-silk (1.8:1) are both illegible
+     as text, so the muted tone and the accent are darkened members of the same
+     two families rather than new hues. */
+  --bg:            #f2e9e4;     /* parchment */
+  --bg-2:          #fbf7f5;     /* lifted surface, derived from parchment */
+  --text:          #22223b;     /* space-indigo — 12.9:1 */
+  --text-muted:    #4a4e69;     /* dusty-grape  —  6.8:1 */
+  --text-faint:    #675c6b;     /* lilac-ash darkened —  5.3:1 */
+  --border:        rgba(34, 34, 59, 0.12);
+  --border-strong: rgba(34, 34, 59, 0.26);
   --glass:         rgba(255, 255, 255, 0.55);
-  --glass-strong:  rgba(255, 255, 255, 0.8);
+  --glass-strong:  rgba(255, 255, 255, 0.82);
 
-  --accent:        #6d28d9;     /* 7.4:1 on --bg */
-  --accent-2:      #0e7490;
-  --accent-3:      #be185d;
-  --accent-rgb:    109, 40, 217;
-  --accent-2-rgb:  14, 116, 144;
-  --accent-3-rgb:  190, 24, 93;
+  --accent:        #7e5248;     /* almond-silk darkened —  5.5:1 */
+  --accent-2:      #4a4e69;     /* dusty-grape          —  6.8:1 */
+  --accent-3:      #74483f;     /* deepest rose         —  6.4:1 */
+  --accent-rgb:    126, 82, 72;
+  --accent-2-rgb:  74, 78, 105;
+  --accent-3-rgb:  116, 72, 63;
 
-  --grad:          linear-gradient(110deg, #5b21b6 0%, #7c3aed 35%, #0891b2 75%, #0e7490 100%);
-  --grad-btn:      linear-gradient(120deg, #6d28d9, #0891b2);
+  --grad:          linear-gradient(110deg, #22223b 0%, #4a4e69 40%, #7e5248 100%);
+  --grad-btn:      linear-gradient(120deg, #4a4e69, #22223b);
+  --on-accent:     #f2e9e4;
 
-  --orb-opacity:   0.35;
-  --grain-opacity: 0.03;
+  --orb-opacity:   0.45;
+  --grain-opacity: 0.035;
 }
 
 /* --- Reset -------------------------------------------------------------- */
@@ -378,7 +386,7 @@ section { position: relative; padding-block: var(--section-y); }
 
 .btn-primary {
   overflow: hidden;
-  color: #fff;
+  color: var(--on-accent);
   background: var(--grad-btn);
   box-shadow: 0 8px 30px -8px rgba(var(--accent-rgb), .7), inset 0 1px 0 rgba(255,255,255,.25);
 }
@@ -394,7 +402,6 @@ section { position: relative; padding-block: var(--section-y); }
 }
 .btn-primary:hover { box-shadow: 0 14px 40px -8px rgba(var(--accent-rgb), .85), 0 0 0 1px rgba(255,255,255,.1); }
 .btn-primary:hover::after { transform: translateX(120%); }
-:root[data-theme="light"] .btn-primary { color: #fff; }
 
 .btn-secondary {
   color: var(--text);
