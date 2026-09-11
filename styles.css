@@ -297,9 +297,6 @@ section { position: relative; padding-block: var(--section-y); }
 }
 
 .wordmark {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.625rem;
   font-size: 0.9375rem;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -307,13 +304,6 @@ section { position: relative; padding-block: var(--section-y); }
   white-space: nowrap;
 }
 .wordmark:hover { color: var(--text); }
-.wordmark-dot {
-  width: 0.5rem; height: 0.5rem;
-  border-radius: 50%;
-  background: var(--grad-btn);
-  box-shadow: 0 0 12px rgba(var(--accent-rgb), .8);
-}
-
 .site-nav { display: none; }
 .site-nav ul { display: flex; align-items: center; gap: 0.25rem; }
 .site-nav a {
@@ -580,32 +570,7 @@ section { position: relative; padding-block: var(--section-y); }
 }
 @media (max-width: 899px) { .hero { min-height: 0; padding-top: 1.5rem; } }
 
-.hero-location {
-  display: inline-flex;
-  align-self: flex-start;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
-  padding: 0.4rem 0.9rem 0.4rem 0.6rem;
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  background: var(--glass);
-  border: 1px solid var(--border);
-  border-radius: 999px;
-  backdrop-filter: blur(8px);
-}
-.hero-location .pulse { position: relative; width: 0.5rem; height: 0.5rem; border-radius: 50%; background: var(--accent-2); }
-.hero-location .pulse::after {
-  content: "";
-  position: absolute; inset: -4px;
-  border-radius: 50%;
-  border: 1px solid var(--accent-2);
-  animation: ping 2.2s var(--ease-out) infinite;
-}
-@keyframes ping { 0% { transform: scale(.6); opacity: 1; } 100% { transform: scale(2); opacity: 0; } }
+.hero .eyebrow { margin-bottom: 1.75rem; }
 
 .hero h1 {
   font-size: clamp(2.6rem, 6.4vw, 4.4rem);
@@ -632,7 +597,25 @@ section { position: relative; padding-block: var(--section-y); }
   line-height: 1.6;
   color: var(--text-muted);
 }
-.hero-meta { margin-top: 1.25rem; font-size: 1rem; color: var(--text-faint); }
+/* Facts set as a typeset row with hairline separators — no badge, no box. */
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
+  margin-top: 1.75rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.hero-facts li { display: flex; align-items: baseline; gap: 1.5rem; white-space: nowrap; }
+.hero-facts li:not(:last-child)::after {
+  content: "";
+  width: 1.5rem; height: 1px;
+  background: var(--border-strong);
+}
 .hero-actions { display: flex; flex-wrap: wrap; gap: 0.875rem; margin-top: clamp(2rem, 4.5vw, 2.75rem); }
 @media (max-width: 400px) { .hero-actions .btn { flex: 1 1 100%; } }
 
@@ -673,19 +656,50 @@ section { position: relative; padding-block: var(--section-y); }
 .glass:hover::before, .glass:hover::after { opacity: 1; }
 .glass > * { position: relative; z-index: 1; }
 
-/* --- Capability rows (hero) --------------------------------------------- */
+/* --- Capabilities (hero) ----------------------------------------------- */
+/* A ruled list, not cards. This sits inside the hero's half-width column, so
+   it reads as label-left / value-right rows rather than three squeezed
+   columns — the earlier 3-up broke because the media query measured the
+   viewport, not this container. */
 
-.capabilities { display: grid; gap: 0.75rem; margin: clamp(2.5rem, 5vw, 3.5rem) 0 0; }
-.capability { display: grid; gap: 0.25rem 1.5rem; padding: 1.1rem 1.35rem; border-radius: var(--radius); }
-@media (min-width: 560px) { .capability { grid-template-columns: 9.5rem 1fr; align-items: start; } }
-.capability dt {
-  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
-  color: var(--accent); padding-top: 0.35rem;
+.capabilities {
+  margin: clamp(2.75rem, 5vw, 4rem) 0 0;
+  border-top: 1px solid var(--border);
 }
-.capability dd { margin: 0; font-size: 1.125rem; font-weight: 700; letter-spacing: -0.015em; line-height: 1.3; }
+
+.capability {
+  display: grid;
+  gap: 0.375rem 2rem;
+  padding-block: clamp(1.125rem, 2.2vw, 1.5rem);
+  border-bottom: 1px solid var(--border);
+}
+
+@media (min-width: 560px) {
+  .capability { grid-template-columns: 10rem 1fr; align-items: baseline; }
+}
+
+.capability dt {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  line-height: 1.6;
+}
+.capability dd {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+}
 .capability dd p {
-  margin-top: 0.3rem; font-size: 0.9rem; font-weight: 400; letter-spacing: normal;
-  line-height: 1.5; color: var(--text-muted);
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.55;
+  color: var(--text-muted);
 }
 
 /* --- Work chapters ------------------------------------------------------ */
@@ -730,8 +744,19 @@ section { position: relative; padding-block: var(--section-y); }
   color: var(--accent);
 }
 
-.tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; font-size: 0.8125rem; color: var(--text-muted); }
-.tech li { white-space: nowrap; padding: 0.3rem 0.75rem; border: 1px solid var(--border); border-radius: 999px; background: var(--glass); }
+/* Set as a technical caption rather than a wall of pills. */
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  margin-top: 1.75rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+.tech li { white-space: nowrap; }
 
 .project-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
 
@@ -945,6 +970,6 @@ section { position: relative; padding-block: var(--section-y); }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; filter: none; transition: none; }
-  .orb, .hero h1 .accent, .hero-location .pulse::after, .scroll-cue::after { animation: none; }
+  .orb, .hero h1 .accent { animation: none; }
   *, *::before, *::after { transition-duration: .01ms !important; }
 }
